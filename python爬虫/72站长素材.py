@@ -26,7 +26,6 @@ proxies=random.choice(proxies_pool)
 def creat_request(page):
     if (page==1):
         url='https://sc.chinaz.com/tupian/qinglvtupian.html'
-
     else:
         url='https://sc.chinaz.com/tupian/qinglvtupian_'+str(page)+'.html'
     headers={
@@ -34,8 +33,6 @@ def creat_request(page):
     }
     request=urllib.request.Request(url=url,headers=headers)
     return request
-
-
 def get_content(request):
         handler=urllib.request.ProxyHandler(proxies=proxies)
         opener=urllib.request.build_opener(handler)
